@@ -1,0 +1,16 @@
+a:
+# Take only numeric columns from iris
+num_data <- iris[, 1:4]
+# Correlation matrix
+cor_matrix <- cor(num_data)
+print(cor_matrix)
+
+b:
+# install.packages("corrplot") # run once if not installed
+library(corrplot)
+corrplot(cor_matrix, method = "circle", type = "upper", tl.col = "black", tl.cex = 0.8)
+
+c:
+# Compare Sepal.Length across species using ANOVA
+anova_model <- aov(Sepal.Length ~ Species, data = iris)
+summary(anova_model)
