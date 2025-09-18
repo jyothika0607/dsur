@@ -1,0 +1,42 @@
+a:
+
+write.table(iris[1:5, ], file = "sample.txt", sep = "\t", row.names = FALSE)
+txt_data <- read.table("sample.txt", header = TRUE, sep = "\t")
+print(txt_data)
+
+write.csv(iris[1:5, ], file = "sample.csv", row.names = FALSE)
+csv_data <- read.csv("sample.csv")
+print(csv_data)
+
+b:
+library(readxl)
+# Assume an Excel file named "sample.xlsx" with iris data
+# For demo, we first create one:
+# (Requires openxlsx package to write)
+# install.packages("openxlsx")
+library(openxlsx)
+write.xlsx(iris[1:5, ], "sample.xlsx")
+# Read the Excel file
+excel_data <- read_excel("sample.xlsx")
+print(excel_data)
+
+c:
+
+install.packages("xml2")
+library(xml2)
+xml_content <- '<root>
+<flower>
+<Sepal.Length>5.1</Sepal.Length>
+<Sepal.Width>3.5</Sepal.Width>
+<Species>setosa</Species>
+</flower>
+<flower>
+<Sepal.Length>4.9</Sepal.Length>
+<Sepal.Width>3.0</Sepal.Width>
+<Species>setosa</Species>
+</flower>
+</root>'
+writeLines(xml_content, "sample.xml")
+# Read XML file
+xml_file <- read_xml("sample.xml")
+print(xml_file)
