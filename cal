@@ -1,0 +1,48 @@
+a:
+10 + 5
+20 - 7
+8 * 3
+15 / 3
+
+using r objects
+x <- 25
+y <- 5
+sum <- x + y
+diff<- x - y
+prod <- x * y
+div <- x / y
+print(sum)
+print(diff)
+print(prod)
+print(div)
+
+
+b:
+sqrt(16) # Square root
+exp(2) # Exponential
+log(10) # Natural log
+log10(1000) # Log base 10
+sin(pi/2) # Trigonometric function
+abs(-45) #
+
+
+c:
+calculator <- function(a, b)
+{ 
+  result <- list(
+  Addition = a + b, Subtraction = a - b, Multiplication = a * b, Division = a / b
+)
+return(result)
+}
+res <- calculator(20, 4)
+print(res)
+saveRDS(res, file = "calculator_output.rds")
+read_res <- readRDS("calculator_output.rds")
+print(read_res)
+
+d:
+library(tidyr) # Data cleaning & reshaping
+library(ggplot2) # Data visualization
+library(ggraph) # Graph visualization
+library(glue) # String interpolation
+library(shiny) # Web applications in R
