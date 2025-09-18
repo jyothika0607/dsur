@@ -1,0 +1,32 @@
+a:
+library(ggplot2)
+ggplot(data = iris, aes(x = Species, y = Sepal.Length)) +
+geom_boxplot() +
+labs(title = "Sepal Length Distribution by Species", x = "Species", y = "Sepal Length")
+
+library(ggplot2)
+ggplot(data = iris, aes(x = Petal.Length, y = Petal.Width)) +
+geom_point(aes(color = Species)) +
+labs(title = "Petal Length vs. Petal Width by Species", x = "Petal Length", y = "Petal Width")
+
+b:
+data <- c(10, 12, 13, 15, 16, 18, 19,33,3,36,63,99,32,15,6, 20, 22, 100, 105)
+# Create a boxplot
+boxplot(data, main = "Boxplot to Identify Outliers", ylab = "Values")
+# Optional: print outliers detected by boxplot.stats
+outliers <- boxplot.stats(data)$out
+print(paste("Outliers:", paste(outliers, collapse = ", ")))
+
+c:
+slices <- c(30, 20, 15, 35)
+labels <- c("A", "B", "C", "D")
+piepercent<- round(100 * slices / sum(slices), 1)
+pie(slices, labels=paste(labels, piepercent, "%"), main="Categories", col=rainbow(length(slices)))
+
+temperatures <- c(67, 72, 74, 62, 76, 66, 65, 59, 61, 69, 70, 71, 75, 68)
+hist(temperatures, main="Temperatures", xlab="Degrees", breaks=5, col="orange")
+
+categories <- c("Apples", "Bananas", "Oranges", "Grapes")
+values <- c(10, 15, 7, 12)
+barplot(values, names.arg = categories, main = "Fruit Sales", xlab = "Fruit", ylab = "Number of Sales", col = c("red", "yellow", "orange", "purple"))
+
